@@ -1,15 +1,21 @@
-import type {Config} from 'jest';
+import type { JestConfigWithTsJest } from 'ts-jest'
 
-const config: Config = {
-  testEnvironment: 'jsdom',
-  verbose: true,
+const nextJest = require("next/jest");
+const createJestConfig = nextJest({
+  dir: "./",
+});
+const customJestConfig: JestConfigWithTsJest = {
+  moduleDirectories: ["node_modules", "<rootDir>/"],
+  testEnvironment: "jest-environment-jsdom",
   transform: {
-      "^.+\\.(js|jsx|ts|tsx)$": "<rootDir>/node_modules/babel-jest"
-    },
-    moduleNameMapper: {
-      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
-      "\\.(css|less)$": "<rootDir>/__mocks__/styleMock.js"
-    }
+    // '^.+\\.[tj]sx?$' to process js/ts with `ts-jest`
+    // '^.+\\.m?[tj]sx?$' to process js/ts/mjs/mts with `ts-jest`
+    '^.+\\.tsx?$': [
+      'ts-jest',
+      {
+        // ts-jest configuration goes here
+      },
+    ],
+  },
 };
-
-export default config;
+module.exports = createJestConfig(customJestConfig);

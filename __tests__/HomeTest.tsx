@@ -4,5 +4,5 @@ import Home from "../pages/index";
 
 test("Check for Getting Started Text", () => {
   const { getByText } = render(<Home />);
-//  expect(getByText("Luke Skywalker")).toBeInTheDocument();
+  //expect(getByText("09-2023 dönemine ait enflasyon verileri")).toBeInTheDocument();
 });

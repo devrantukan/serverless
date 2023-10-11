@@ -8,7 +8,6 @@
   },
   "dependencies": {
     "@babel/preset-env": "^7.22.20",
-    "@babel/preset-typescript": "^7.23.0",
     "@prisma/client": "5.4.1",
     "axios": "^1.5.1",
     "babel-jest": "^29.7.0",
@@ -26,6 +25,7 @@
   "devDependencies": {
     "@babel/core": "^7.23.0",
     "@babel/preset-react": "^7.22.15",
+    "@babel/preset-typescript": "^7.23.0",
     "@jest/globals": "^29.7.0",
     "@testing-library/dom": "^9.3.3",
     "@testing-library/jest-dom": "^6.1.3",
@@ -52,8 +52,5 @@
   "main": "index.js",
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "browser": {
-    "child_process": false
-  }
+  "license": "ISC"
 }
