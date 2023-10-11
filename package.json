@@ -24,6 +24,8 @@
     "ws": "^8.14.2"
   },
   "devDependencies": {
+    "@argos-ci/cli": "^0.6.0",
+    "@argos-ci/puppeteer": "^0.0.3",
     "@babel/core": "^7.23.0",
     "@babel/preset-react": "^7.22.15",
     "@babel/preset-typescript": "^7.23.0",
