@@ -25,7 +25,7 @@ const takeScreenShot = async () => {
     //One
     console.log(data[0]);
     const fs = require('fs');
-fs.writeFile('./recipes.json', JSON.stringify(data), err => err ? console.log(err): null);
+fs.writeFile('./rates.json', JSON.stringify(data), err => err ? console.log(err): null);
     await browser.close()
    })()}
 export default async function (req, res) {
