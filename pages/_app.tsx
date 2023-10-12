@@ -24,6 +24,23 @@ export default function MyApp({ Component, pageProps }: AppProps): JSX.Element {
 src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
 />
       </Head>
+      <Script id="ga4"
+        strategy="afterInteractive"
+        src={`https://www.googletagmanager.com/gtag/js?id=G-LNQ9BKP8VM`}
+      />
+      <Script id="ga42"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-LNQ9BKP8VM', {
+              page_path: window.location.pathname,
+            });
+          `,
+        }}
+      />
   
       <Component {...pageProps} />
      
