@@ -18,11 +18,18 @@ export default function MyApp({ Component, pageProps }: AppProps): JSX.Element {
     <meta name="keywords" content="" />
     <meta name="author" content="" />
 
-    <Script id="Adsense-id" data-ad-client="ca-pub-0461397062088269"
-  async strategy="afterInteractive" crossOrigin="anonymous"
-  onError={ (e) => { console.error('Script failed to load', e) }}
-src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
-/>
+<script
+    id="Adsense-id"
+    async 
+    crossOrigin="anonymous"
+    dangerouslySetInnerHTML={{
+      __html: `window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+  
+      gtag('config', ${"ca-pub-0461397062088269"});`
+    }}
+  />
       </Head>
       <Script id="ga4"
         strategy="afterInteractive"
